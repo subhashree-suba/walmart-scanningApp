@@ -1,9 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import {NavController, NavParams, AlertController,ToastController  } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, AlertController,ToastController  } from 'ionic-angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import {HomePage} from '../home/home';
 import { SelectStorePage } from '../select-store/select-store';
+
+// @IonicPage({
+//   name: 'loginPage'
+// })
 
 @Component({
   selector: 'page-login',
