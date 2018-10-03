@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule  } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -17,6 +19,9 @@ import { SelectLoadPage } from '../pages/select-load/select-load';
 import { ItemsPage } from '../pages/items/items';
 
 import { firebaseConfig } from './../config' ;
+import { LoadapiProvider } from '../providers/loadapi/loadapi';
+import { StoreapiProvider } from '../providers/storeapi/storeapi';
+import { PalletapiProvider } from '../providers/palletapi/palletapi';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import { firebaseConfig } from './../config' ;
       tabsPlacement:'top'
     }),
     AngularFireModule.initializeApp(firebaseConfig.fire),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    HttpModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +58,10 @@ import { firebaseConfig } from './../config' ;
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoadapiProvider,
+    StoreapiProvider,
+    PalletapiProvider
   ]
 })
 export class AppModule {}

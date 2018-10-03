@@ -16,7 +16,8 @@
 // automatically applied to the <body> element in the app.
 
 .scroll-content {
-  overflow-y: hidden;
+  // overflow-y: hidden;
+  overflow-y: auto !important;
 }
 
 .activeHighlight {
@@ -32,3 +33,8 @@
     height: 100%;
     text-align: center;
   }
+
+//   ::-webkit-scrollbar,
+// *::-webkit-scrollbar {
+//   display: none;
+// }
