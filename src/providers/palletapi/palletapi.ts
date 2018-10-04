@@ -20,6 +20,8 @@ export class PalletapiProvider {
 
 
   getPallet(term) {
+    console.log(term)
+    console.log(this.baseUrl + this.queryUrl + term)
     return this.http.get(this.baseUrl + this.queryUrl + term)
     .do(this.logResponse)
     .map(this.extractData)

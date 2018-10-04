@@ -17,6 +17,7 @@ import { ReceiveShipmentPage } from '../pages/receive-shipment/receive-shipment'
 import { ScanPage } from '../pages/scan/scan';
 import { SelectLoadPage } from '../pages/select-load/select-load';
 import { ItemsPage } from '../pages/items/items';
+import { SelectPalletsPage } from '../pages/select-pallets/select-pallets';
 
 import { firebaseConfig } from './../config' ;
 import { LoadapiProvider } from '../providers/loadapi/loadapi';
@@ -32,7 +33,8 @@ import { PalletapiProvider } from '../providers/palletapi/palletapi';
     ReceiveShipmentPage,
     ScanPage,
     SelectLoadPage,
-    ItemsPage
+    ItemsPage,
+    SelectPalletsPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { PalletapiProvider } from '../providers/palletapi/palletapi';
     ReceiveShipmentPage,
     ScanPage,
     SelectLoadPage,
-    ItemsPage
+    ItemsPage,
+    SelectPalletsPage
   ],
   providers: [
     StatusBar,

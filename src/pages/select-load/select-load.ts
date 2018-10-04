@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoadapiProvider } from './../../providers/loadapi/loadapi';
+import { IonicPage, NavController, NavParams,Events } from 'ionic-angular';
 
+import { SelectPalletsPage } from '../select-pallets/select-pallets';
+
+import { LoadapiProvider } from './../../providers/loadapi/loadapi';
+import { PalletapiProvider } from './../../providers/palletapi/palletapi';
 /**
  * Generated class for the SelectLoadPage page.
  *
@@ -20,12 +23,16 @@ export class SelectLoadPage {
   filterItems: any;
   selectedItem: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: LoadapiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: LoadapiProvider, public palletApiProvider: PalletapiProvider, public events: Events) {
+    
+    // this.palletApiProvider.getPallet(this.selectedItem).subscribe(results =>{
+    //   console.log(results);
+    // })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SelectLoadPage');
-    this.getLoad()
+    this.getLoad();
   }
 
   getLoad(){
@@ -62,6 +69,14 @@ filterItem(){
 
 selectLoad(selectedItem){
   console.log(selectedItem);
+  this.palletApiProvider.getPallet(selectedItem).subscribe(results =>{
+    console.log(results);
+    // this.navCtrl.push(SelectPalletsPage,{
+    //   sendData:results
+    //   });
+    // this.navCtrl.push(SelectPalletsPage);
+    this.events.publish('page:selectPallet', results)
+  })
 }
     
   }
