@@ -7,19 +7,38 @@
 
     <ion-content>
         <ion-list>
-            <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+            <button menuClose ion-item no-lines *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+                    <ion-icon [name]="p.icon" style="zoom:0.9;" item-left></ion-icon>
                 {{p.title}}
             </button>
-            <!-- <button menuClose ion-item (click)="logoutPage()">
-                Logout
-            </button> -->
+            <ion-item no-lines>
+                    <ion-icon name="folder" item-left></ion-icon>
+                    Inventory Management
+                </ion-item>
         </ion-list>
+        <!-- <ion-list>
+            <ion-item no-lines>
+                <ion-icon name="folder" item-left></ion-icon>
+                Inventory Management
+            </ion-item>
+        </ion-list>
+        <ion-list class = "menuMargin">
+                <ion-item no-lines>
+                    create pick
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                    <button menuClose ion-item no-lines *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+                            <ion-icon [name]="p.icon" item-left></ion-icon>
+                        {{p.title}}
+                    </button>
+                </ion-list> -->
     </ion-content>
 
     <ion-footer>
         <ion-toolbar>
             <ion-list>
-                <button menuClose ion-item (click)="logoutPage()">
+                <button menuClose ion-item no-lines (click)="logoutPage()">
                     Logout
                 </button>
             </ion-list>

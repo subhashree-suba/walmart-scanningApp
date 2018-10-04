@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { SelectStorePage } from '../pages/select-store/select-store';
 import { ReceiveShipmentPage } from '../pages/receive-shipment/receive-shipment';
 import { SelectPalletsPage } from '../pages/select-pallets/select-pallets';
+// import { SelectPalle¿sPage } from '../pages/select-pallets/select-pallets';
 
 
 @Component({
@@ -19,13 +20,13 @@ export class MyApp {
   rootPage: any = LoginPage;
 
   activePage: any;
-  pages: Array<{ title: string, component: any }>;
+  pages: Array<{ title: string, component: any, icon: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, events: Events) {
     this.initializeApp();
     this.pages = [
-      { title: 'Select Store', component: SelectStorePage },
-      { title: 'Receive Shipment', component: ReceiveShipmentPage }
+      { title: 'Select Store', component: SelectStorePage, icon: 'home' },
+      { title: 'Receive Shipment', component: ReceiveShipmentPage, icon: 'archive' }
     ]
     this.activePage = this.pages[0];
     events.subscribe('page:selectPallet', (data) => {
