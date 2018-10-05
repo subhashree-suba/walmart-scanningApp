@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the StoreapiProvider provider.
@@ -12,6 +13,31 @@ export class StoreapiProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello StoreapiProvider Provider');
+  }
+  
+  // term: any;
+  // baseUrl: string = 'http://localhost:4001/store';
+  // queryUrl: string = '?store=';
+
+
+  getStore() {
+    return this.http.get('http://localhost:4001/store')
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
+  }
+ 
+  private catchError(error){
+    console.log(error);
+    return Observable.throw(error || "Server error.");
+  }
+ 
+  private logResponse(res) {
+    // console.log(res);
+  }
+ 
+  extractData(res){
+    return res;
   }
 
 }

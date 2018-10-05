@@ -17,5 +17,23 @@
 
 
 <ion-content padding>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterStore()"></ion-searchbar>
+    <!-- <ion-card *ngFor="let item of filterItems">
+        <ion-card-content>
+            Store : {{item.store}} <br> -->
+            <!-- <button block ion-button color="loadSelect" (click)="selectLoad(item.loadNo)"> Select </button>          
+        </ion-card-content>
+      </ion-card> -->
+
+      <div class = 'divHeight'>
+        <ion-list>
+        <button ion-item no-lines *ngFor="let item of filterItems">
+            {{item.store}}
+        </button>
+      </ion-list>
+      </div>
+
+      <button ion-button class = 'btn'>Download</button>
+      <button ion-button class = 'btn'>Upload</button>
 
 </ion-content>
