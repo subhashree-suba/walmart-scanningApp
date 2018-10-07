@@ -9,6 +9,7 @@ import { SelectStorePage } from '../pages/select-store/select-store';
 import { ReceiveShipmentPage } from '../pages/receive-shipment/receive-shipment';
 import { SelectPalletsPage } from '../pages/select-pallets/select-pallets';
 // import { SelectPalle¿sPage } from '../pages/select-pallets/select-pallets';
+import { OpenTicketsPage } from '../pages/open-tickets/open-tickets';
 
 
 @Component({
@@ -26,9 +27,12 @@ export class MyApp {
     this.initializeApp();
     this.pages = [
       { title: 'Select Store', component: SelectStorePage, icon: 'home' },
-      { title: 'Receive Shipment', component: ReceiveShipmentPage, icon: 'archive' }
+      { title: 'Receive Shipment', component: ReceiveShipmentPage, icon: 'archive' },
+      { title: 'Open Tickets', component: OpenTicketsPage, icon: 'bookmarks' }
+
     ]
     this.activePage = this.pages[0];
+    
     events.subscribe('page:selectPallet', (data) => {
       this.nav.push(SelectPalletsPage,{
           sendData:data

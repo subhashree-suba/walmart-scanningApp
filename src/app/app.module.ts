@@ -18,11 +18,13 @@ import { ScanPage } from '../pages/scan/scan';
 import { SelectLoadPage } from '../pages/select-load/select-load';
 import { ItemsPage } from '../pages/items/items';
 import { SelectPalletsPage } from '../pages/select-pallets/select-pallets';
+import { OpenTicketsPage } from '../pages/open-tickets/open-tickets';
 
 import { firebaseConfig } from './../config' ;
 import { LoadapiProvider } from '../providers/loadapi/loadapi';
 import { StoreapiProvider } from '../providers/storeapi/storeapi';
 import { PalletapiProvider } from '../providers/palletapi/palletapi';
+import { OpenTicketapiProvider } from '../providers/open-ticketapi/open-ticketapi';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { PalletapiProvider } from '../providers/palletapi/palletapi';
     ScanPage,
     SelectLoadPage,
     ItemsPage,
-    SelectPalletsPage
+    SelectPalletsPage,
+    OpenTicketsPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { PalletapiProvider } from '../providers/palletapi/palletapi';
     ScanPage,
     SelectLoadPage,
     ItemsPage,
-    SelectPalletsPage
+    SelectPalletsPage,
+    OpenTicketsPage
   ],
   providers: [
     StatusBar,
@@ -64,7 +68,8 @@ import { PalletapiProvider } from '../providers/palletapi/palletapi';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoadapiProvider,
     StoreapiProvider,
-    PalletapiProvider
+    PalletapiProvider,
+    OpenTicketapiProvider
   ]
 })
 export class AppModule {}
