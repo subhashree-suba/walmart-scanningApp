@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import {IonicPage, NavController, NavParams, AlertController,ToastController  } from 'ionic-angular';
-import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 
 import {HomePage} from '../home/home';
 import { SelectStorePage } from '../select-store/select-store';
@@ -18,7 +18,10 @@ export class LoginPage {
   @ViewChild('userName') userName;
   @ViewChild('password') password;
 
-  constructor(private fire:AngularFireAuth, private alertctrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private toastctrl: ToastController) {
+  // constructor(private fire:AngularFireAuth, private alertctrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private toastctrl: ToastController) {
+  // }
+
+  constructor(private alertctrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private toastctrl: ToastController) {
   }
 
   toast(message:string, value:boolean) {
@@ -30,17 +33,21 @@ export class LoginPage {
 
   }
 
-  login() {
-    this.fire.auth.signInWithEmailAndPassword(this.userName.value , this.password.value)
-    .then( data => {
-      console.log("got data");
-      this.navCtrl.setRoot(SelectStorePage);
-    })
-    .catch( error => {
-      console.log("got error", error)
-      this.toast("Invalid Username or Password", true);
-    })
+  // login() {
+  //   this.fire.auth.signInWithEmailAndPassword(this.userName.value , this.password.value)
+  //   .then( data => {
+  //     console.log("got data");
+  //     this.navCtrl.setRoot(SelectStorePage);
+  //   })
+  //   .catch( error => {
+  //     console.log("got error", error)
+  //     this.toast("Invalid Username or Password", true);
+  //   })
 
+  // }
+
+  login(){
+    this.navCtrl.setRoot(SelectStorePage);
   }
 
   ionViewDidLoad() {

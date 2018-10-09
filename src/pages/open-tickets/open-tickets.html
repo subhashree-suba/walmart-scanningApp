@@ -6,9 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>openTickets</ion-title>
-  </ion-navbar>
+  <ion-toolbar color = 'primary'>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title class='ionNavTitle'>Open Tickets</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
@@ -20,5 +23,23 @@
         <option [ngValue]="i" *ngFor="let i of ticketType">{{i.type}}</option>
       </select>
     </div>
+
+    <!-- <ion-card *ngFor="let item of item1">
+      <ion-card-content>
+        Ticket Type : {{item.ticketType}}       
+      </ion-card-content>
+    </ion-card> -->
+
+    <ion-grid class = "align-table">
+      <ion-row *ngFor="let item of item1">
+        <ion-col>
+          <!-- {{item.ticket}} -->
+          <a href="">{{item.ticket}}</a>
+        </ion-col>
+        <ion-col>
+          {{item.description}}
+        </ion-col>
+      </ion-row>
+      </ion-grid>
 
 </ion-content>

@@ -1,6 +1,6 @@
-<ion-menu id="myMenu" [content]="content" >
+<ion-menu id="myMenu" [content]="content">
     <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="primary">
             <ion-title>Menu</ion-title>
         </ion-toolbar>
     </ion-header>
@@ -11,23 +11,44 @@
                     <ion-icon [name]="p.icon" style="zoom:0.9;" item-left></ion-icon>
                 {{p.title}}
             </button>
-            <ion-item no-lines>
-                    <ion-icon name="folder" item-left></ion-icon>
+            <!-- <ion-item no-lines>
+                    <!-- <ion-icon name="folder" item-left></ion-icon>
                     Inventory Management
-                </ion-item>
-        </ion-list>
-        <!-- <ion-list>
+                </ion-item> -->
+        </ion-list> 
+        <ion-list>
             <ion-item no-lines>
                 <ion-icon name="folder" item-left></ion-icon>
                 Inventory Management
             </ion-item>
+            <ion-item class = "menuMargin" no-lines>
+                Create pick
+            </ion-item>
+            <ion-item class = "menuMargin" no-lines>
+                Create Return
+            </ion-item>
+            <ion-item class = "menuMargin" no-lines>
+                Create Adjustment
+            </ion-item>
+            <ion-item class = "menuMargin" no-lines>
+                Create MTR
+            </ion-item>
+            <ion-item no-lines>
+                <ion-icon name="bookmarks" style="zoom:0.9;" item-left></ion-icon>
+                Open Ticket
+            </ion-item>
+            <ion-item no-lines>
+                <ion-icon name="bookmarks" style="zoom:0.9;" item-left></ion-icon>
+                Audit
+            </ion-item>
+
         </ion-list>
-        <ion-list class = "menuMargin">
+        <!-- <ion-list class = "menuMargin">
                 <ion-item no-lines>
-                    create pick
+                    Create pick
                 </ion-item>
-            </ion-list>
-            <ion-list>
+            </ion-list> -->
+            <!-- <ion-list>
                     <button menuClose ion-item no-lines *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
                             <ion-icon [name]="p.icon" item-left></ion-icon>
                         {{p.title}}

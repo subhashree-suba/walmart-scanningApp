@@ -17,8 +17,9 @@ import { OpenTicketapiProvider } from './../../providers/open-ticketapi/open-tic
 })
 export class OpenTicketsPage {
 
-  public load:any;
-  filterItems: any;
+  public tickets:any;
+  filterTickets: any;
+  item1: any
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public ticketapi: OpenTicketapiProvider) {
     this.getTicket();
@@ -32,17 +33,20 @@ export class OpenTicketsPage {
   ticketType = [{type: "Create Return"}, {type: "Create Pickup"}];
   selectedticketType = "Select Ticket Type";
 
+  getTicket(){
+    this.ticketapi.getTicket().subscribe(data => {
+      this.tickets = data;
+      this.filterTickets = this.tickets;
+    });
+  }
+
   onChangeTicket(newObj) {
     console.log(newObj);
     this.selectedticketType = newObj;
-    
-  }
-
-  getTicket(){
-    this.ticketapi.getTicket().subscribe(data => {
-      this.load = data;
-      this.filterItems = this.load;
-    });
+    console.log(this.selectedticketType['type'])
+    console.log(this.filterTickets);
+    this.item1 = this.filterTickets.filter(i => i.ticketType === this.selectedticketType['type']);
+    console.log(this.item1)
   }
 
 }

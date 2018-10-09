@@ -29,7 +29,6 @@ export class MyApp {
       { title: 'Select Store', component: SelectStorePage, icon: 'home' },
       { title: 'Receive Shipment', component: ReceiveShipmentPage, icon: 'archive' },
       { title: 'Open Tickets', component: OpenTicketsPage, icon: 'bookmarks' }
-
     ]
     this.activePage = this.pages[0];
     

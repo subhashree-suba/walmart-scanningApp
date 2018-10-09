@@ -25,15 +25,26 @@
         </ion-card-content>
       </ion-card> -->
 
-      <div class = 'divHeight'>
-        <ion-list>
-        <button ion-item no-lines *ngFor="let item of filterItems">
+      <!-- <body> -->
+      <div id = 'divHeight'>
+        <ion-list >
+        <button class="button-color" ion-item no-lines *ngFor="let item of filterItems">
             {{item.store}}
         </button>
       </ion-list>
       </div>
+    <!-- </body> -->
 
       <button ion-button outline class = 'btnDownload'>Download</button>
       <button ion-button class = 'btnUpload'>Upload</button>
+
+      <ion-card>
+      <ion-card-content>
+        Store : 123-Fixture Remodel <br>
+        Project Number : USRM - 00 - 1234 <br>
+        Possession Date : 13-12-2017 <br>
+        Grand Opening Date : 13-12-2017 
+      </ion-card-content>
+    </ion-card>
 
 </ion-content>

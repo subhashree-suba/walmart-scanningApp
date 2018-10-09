@@ -6,8 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule  } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,7 +20,7 @@ import { ItemsPage } from '../pages/items/items';
 import { SelectPalletsPage } from '../pages/select-pallets/select-pallets';
 import { OpenTicketsPage } from '../pages/open-tickets/open-tickets';
 
-import { firebaseConfig } from './../config' ;
+// import { firebaseConfig } from './../config' ;
 import { LoadapiProvider } from '../providers/loadapi/loadapi';
 import { StoreapiProvider } from '../providers/storeapi/storeapi';
 import { PalletapiProvider } from '../providers/palletapi/palletapi';
@@ -44,8 +44,8 @@ import { OpenTicketapiProvider } from '../providers/open-ticketapi/open-ticketap
     IonicModule.forRoot(MyApp, {
       tabsPlacement:'top'
     }),
-    AngularFireModule.initializeApp(firebaseConfig.fire),
-    AngularFireAuthModule,
+    // AngularFireModule.initializeApp(firebaseConfig.fire),
+    // AngularFireAuthModule,
     HttpClientModule,
     HttpModule 
   ],
